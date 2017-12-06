@@ -1,34 +1,34 @@
-.TH MINERD 1 "February 2014" "cpuminer 2.3.3"
+.TH cpuresearch 1 "February 2014" "cpuresearch 2.3.3"
 .SH NAME
-minerd \- CPU miner for Bitcoin and Litecoin
+cpuresearch \- CPU miner for Bitcoin and Litecoin
 .SH SYNOPSIS
-.B minerd
+.B cpuresearch
 [\fIOPTION\fR]...
 .SH DESCRIPTION
-.B minerd
+.B cpuresearch
 is a multi-threaded CPU miner for Bitcoin, Litecoin and other cryptocurrencies.
 It supports the getwork mining protocol as well as the Stratum mining protocol.
 .PP
-In its normal mode of operation, \fBminerd\fR connects to a mining server
+In its normal mode of operation, \fBcpuresearch\fR connects to a mining server
 (specified with the \fB\-o\fR option), receives work from it and starts hashing.
 As soon as a solution is found, it is submitted to the same mining server,
 which can accept or reject it.
-When using the getwork protocol, \fBminerd\fR can take advantage
+When using the getwork protocol, \fBcpuresearch\fR can take advantage
 of the long polling extension, if the server supports it;
 in any case, fresh work is fetched as needed.
 When using the Stratum protocol this is not possible,
 and the server is responsible for sending fresh work at least every minute;
 if it fails to do so,
-\fBminerd\fR may drop the connection and try reconnecting again.
+\fBcpuresearch\fR may drop the connection and try reconnecting again.
 .PP
-By default, \fBminerd\fR writes all its messages to standard error.
+By default, \fBcpuresearch\fR writes all its messages to standard error.
 On systems that have a syslog, the \fB\-\-syslog\fR option can be used
 to write to it instead.
 .PP
 On start, the nice value of all miner threads is set to 19.
 On Linux, the scheduling policy is also changed to SCHED_IDLE,
 or to SCHED_BATCH if that fails.
-On multiprocessor systems, \fBminerd\fR
+On multiprocessor systems, \fBcpuresearch\fR
 automatically sets the CPU affinity of miner threads
 if the number of threads is a multiple of the number of processors.
 .SH EXAMPLES
@@ -37,7 +37,7 @@ at example.com on port 3333, authenticating as worker "foo" with password "bar":
 .PP
 .nf
 .RS
-minerd \-o stratum+tcp://example.com:3333 \-O foo:bar
+cpuresearch \-o stratum+tcp://example.com:3333 \-O foo:bar
 .RE
 .fi
 .PP
@@ -46,7 +46,7 @@ authenticating with username "rpcuser" and password "rpcpass":
 .PP
 .nf
 .RS
-minerd \-a sha256d \-o http://localhost:18332 \-O rpcuser:rpcpass
+cpuresearch \-a sha256d \-o http://localhost:18332 \-O rpcuser:rpcpass
 .RE
 .fi
 .PP
@@ -56,7 +56,7 @@ omitting the per-thread hashmeter output:
 .PP
 .nf
 .RS
-minerd \-BSq \-o http://my.server:9327
+cpuresearch \-BSq \-o http://my.server:9327
 .RE
 .fi
 .SH OPTIONS
@@ -192,7 +192,7 @@ Sets the proxy server to use if no protocol-specific proxy is set.
 Using an environment variable to set the proxy has the same effect as
 using the \fB\-x\fR option.
 .SH AUTHOR
-Most of the code in the current version of minerd was written by
+Most of the code in the current version of cpuresearch was written by
 Pooler <pooler@litecoinpool.org> with contributions from others.
 
-The original minerd was written by Jeff Garzik <jeff@garzik.org>.
+The original cpuresearch was written by Jeff Garzik <jeff@garzik.org>.

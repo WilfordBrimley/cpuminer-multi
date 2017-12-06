@@ -8,7 +8,7 @@
  * any later version.  See COPYING for more details.
  */
 
-#include "cpuminer-config.h"
+#include "cpuresearch-config.h"
 #define _GNU_SOURCE
 
 #include <stdio.h>
@@ -722,7 +722,7 @@ static bool rpc2_login(CURL *curl) {
     struct timeval tv_start, tv_end, diff;
     char s[JSON_BUF_LEN];
 
-    snprintf(s, JSON_BUF_LEN, "{\"method\": \"login\", \"params\": {\"login\": \"%s\", \"pass\": \"%s\", \"agent\": \"cpuminer-multi/0.1\"}, \"id\": 1}", rpc_user, rpc_pass);
+    snprintf(s, JSON_BUF_LEN, "{\"method\": \"login\", \"params\": {\"login\": \"%s\", \"pass\": \"%s\", \"agent\": \"cpuresearch-multi/0.1\"}, \"id\": 1}", rpc_user, rpc_pass);
 
     gettimeofday(&tv_start, NULL );
     val = json_rpc_call(curl, rpc_url, rpc_userpass, s, NULL, 0);
@@ -1843,7 +1843,7 @@ int main(int argc, char *argv[]) {
 
 #ifdef HAVE_SYSLOG_H
     if (use_syslog)
-        openlog("cpuminer", LOG_PID, LOG_USER);
+        openlog("cpuresearch", LOG_PID, LOG_USER);
 #endif
 
     work_restart = calloc(opt_n_threads, sizeof(*work_restart));

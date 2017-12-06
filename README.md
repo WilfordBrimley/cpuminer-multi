@@ -1,9 +1,9 @@
-CPUMiner-Multi
+cpuresearch-Multi
 ==============
 
-###NOTE: Wolf's cpuminer-multi is no longer maintained - please use https://github.com/genesismining/sgminer-gm.
+###NOTE: Wolf's cpuresearch-multi is no longer maintained - please use https://github.com/genesismining/sgminer-gm.
 
-This is a multi-threaded CPU miner, fork of [LucasJones](//github.com/lucasjones)' cpuminer-multi.
+This is a multi-threaded CPU miner, fork of [LucasJones](//github.com/lucasjones)' cpuresearch-multi.
 
 #### Table of contents
 
@@ -29,8 +29,8 @@ Dependencies
 Download
 ========
 * For binary releases, see Bitcointalk thread: https://bitcointalk.org/index.php?topic=632724
-* Git tree:   https://github.com/wolf9466/cpuminer-multi
-* Clone with `git clone https://github.com/wolf9466/cpuminer-multi`
+* Git tree:   https://github.com/wolf9466/cpuresearch-multi
+* Clone with `git clone https://github.com/wolf9466/cpuresearch-multi`
 
 Build
 =====
@@ -52,11 +52,11 @@ Build
 
 Usage instructions
 ==================
-Run "minerd --help" to see options.
+Run "cpuresearch --help" to see options.
 
 Example command line
 ==================
-./minerd -a cryptonight -o stratum+tcp://mine.moneropool.com:3333 -p x -u 42QWoLF7pdwMcTXDviJvNkWEHJ4TXnMBh2Cx6HNkVAW57E48Zfw6wLwDUYFDYJAqY7PLJUTz9cHWB5C4wUA7UJPu5wPf4sZ -t `nproc`
+./cpuresearch -a cryptonight -o stratum+tcp://mine.moneropool.com:3333 -p x -u 42QWoLF7pdwMcTXDviJvNkWEHJ4TXnMBh2Cx6HNkVAW57E48Zfw6wLwDUYFDYJAqY7PLJUTz9cHWB5C4wUA7UJPu5wPf4sZ -t `nproc`
 
 ### Connecting through a proxy
 
@@ -76,7 +76,7 @@ Donations for the work done in this fork are accepted at
 
 Credits
 =======
-This faster CPUMiner-multi was forked from LucasJones', and has been developed by Wolf.
+This faster cpuresearch-multi was forked from LucasJones', and has been developed by Wolf.
 Special thanks to Intel for helping me with the usage of the AESKEYGENASSIST instruction, which I used to replace the calls to the slow, unoptimized oaes_lib.
 Special thanks also to dga for his code with that loop - since it runs over 500,000 times per hash, it's extremely important.
 

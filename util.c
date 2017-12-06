@@ -9,7 +9,7 @@
  */
 
 #define _GNU_SOURCE
-#include "cpuminer-config.h"
+#include "cpuresearch-config.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -936,7 +936,7 @@ bool stratum_authorize(struct stratum_ctx *sctx, const char *user, const char *p
 
 	if(jsonrpc_2) {
         s = malloc(300 + strlen(user) + strlen(pass));
-        sprintf(s, "{\"method\": \"login\", \"params\": {\"login\": \"%s\", \"pass\": \"%s\", \"agent\": \"cpuminer-multi/0.1\"}, \"id\": 1}",
+        sprintf(s, "{\"method\": \"login\", \"params\": {\"login\": \"%s\", \"pass\": \"%s\", \"agent\": \"cpuresearch-multi/0.1\"}, \"id\": 1}",
                 user, pass);
 	} else {
         s = malloc(80 + strlen(user) + strlen(pass));

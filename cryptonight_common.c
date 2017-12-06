@@ -2,9 +2,9 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-// Modified for CPUminer by Lucas Jones
+// Modified for cpuresearch by Lucas Jones
 
-#include "cpuminer-config.h"
+#include "cpuresearch-config.h"
 #include "miner.h"
 #include "crypto/c_groestl.h"
 #include "crypto/c_blake256.h"
